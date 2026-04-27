@@ -76,9 +76,9 @@ export function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
-                        <div className="px-4 pt-6 pb-2 grid grid-cols-2 gap-4 border-t border-slate-100 mt-4">
-                            <Link href="/contact" className="flex items-center justify-center font-bold text-slate-900 bg-slate-100 rounded-xl py-3 uppercase tracking-wider" onClick={() => setMobileMenuOpen(false)}>Log In</Link>
-                            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                        <div className="px-4 pt-6 pb-2 grid grid-cols-1 gap-4 border-t border-slate-100 mt-4">
+                            {/* <Link href="/contact" className="flex items-center justify-center font-bold text-slate-900 bg-slate-100 rounded-xl py-3 uppercase tracking-wider" onClick={() => setMobileMenuOpen(false)}>Log In</Link> */}
+                            <Link href="/portal" onClick={() => setMobileMenuOpen(false)}>
                                 <Button variant="secondary" className="w-full py-3 h-auto leading-none text-sm uppercase tracking-wider">Explore Portal</Button>
                             </Link>
                         </div>

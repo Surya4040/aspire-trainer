@@ -50,8 +50,8 @@ export function Navbar() {
                     </nav>
 
                     <div className="hidden lg:flex items-center space-x-6">
-                        <Link href="/contact" className="text-sm font-bold tracking-wide text-slate-600 hover:text-slate-950 uppercase">Log in</Link>
-                        <Link href="/contact">
+                        {/* <Link href="/contact" className="text-sm font-bold tracking-wide text-slate-600 hover:text-slate-950 uppercase">Log in</Link> */}
+                        <Link href="/portal">
                             <Button variant="secondary" className="px-6 py-3 text-sm shadow-lg shadow-accent-500/30 hover:shadow-xl hover:shadow-accent-500/50 bg-accent-500 hover:bg-accent-600">
                                 Explore Portal
                             </Button>

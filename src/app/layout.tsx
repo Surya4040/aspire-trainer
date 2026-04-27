@@ -44,7 +44,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-blue-600 selection:text-white">
+      <body className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-accent-500 selection:text-white">
         <Navbar />
         <main className="flex-1 mt-20">
           {children}

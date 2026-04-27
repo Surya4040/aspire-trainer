@@ -6,8 +6,11 @@ export function Footer() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
                     <div className="col-span-1 md:col-span-1">
-                        <Link href="/" className="text-2xl font-bold text-white mb-4 block">
-                            Aspire Info
+                        <Link href="/" className="flex items-center gap-3 mb-6">
+                            <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                                <span className="text-lg font-black text-slate-950">A</span>
+                            </div>
+                            <span className="text-2xl font-bold text-white tracking-tighter">Aspire.</span>
                         </Link>
                         <p className="text-slate-400 text-sm leading-relaxed mb-6">
                             Online & Remote Learning. A fast-growing startup based in Tamil Nadu dedicated to teaching software engineering through practical execution.
@@ -32,7 +35,7 @@ export function Footer() {
                     </div>
                     <div>
                         <h3 className="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Connect</h3>
-                        <p className="text-sm mb-2">Email: info@aspireinfo.com</p>
+                        <p className="text-sm mb-2">Email: aspireinfo.edu@gmail.com</p>
                         <p className="text-sm mb-4">Phone: +91 8220924040</p>
                         <Link href="/contact" className="inline-block border border-slate-600 hover:border-brand-500 hover:text-white px-4 py-2 rounded transition-colors text-sm">
                             Get in Touch

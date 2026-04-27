@@ -25,28 +25,42 @@ export function Navbar() {
     ];
 
     return (
-        <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-200' : 'bg-transparent'}`}>
+        <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2 border-b border-slate-200' : 'bg-white py-4 border-b border-slate-100'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
+                <div className="flex justify-between items-center h-16">
                     <div className="flex items-center">
-                        <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-brand-700 to-accent-500 bg-clip-text text-transparent">
-                            Aspire Info
+                        <Link href="/" className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-slate-950 rounded shadow-md shadow-accent-500/20 flex items-center justify-center border border-slate-800">
+                                <span className="text-xl font-black text-white">A</span>
+                            </div>
+                            <div className="text-3xl font-black tracking-tighter">
+                                <span className="text-slate-950">Aspire</span>
+                                <span className="text-accent-500">.</span>
+                            </div>
                         </Link>
                     </div>
 
                     {/* Desktop Nav */}
-                    <nav className="hidden md:flex space-x-8 items-center">
+                    <nav className="hidden lg:flex space-x-8 items-center px-6 py-2">
                         {navLinks.map((link) => (
-                            <Link key={link.name} href={link.href} className="text-slate-600 hover:text-brand-600 font-medium transition-colors">
+                            <Link key={link.name} href={link.href} className="text-sm font-bold text-slate-600 hover:text-slate-950 uppercase tracking-widest transition-colors">
                                 {link.name}
                             </Link>
                         ))}
-                        <Button variant="primary">Book Free Demo</Button>
                     </nav>
 
+                    <div className="hidden lg:flex items-center space-x-6">
+                        <Link href="/contact" className="text-sm font-bold tracking-wide text-slate-600 hover:text-slate-950 uppercase">Log in</Link>
+                        <Link href="/contact">
+                            <Button variant="secondary" className="px-6 py-3 text-sm shadow-lg shadow-accent-500/30 hover:shadow-xl hover:shadow-accent-500/50 bg-accent-500 hover:bg-accent-600">
+                                Explore Portal
+                            </Button>
+                        </Link>
+                    </div>
+
                     {/* Mobile Nav Toggle */}
-                    <div className="flex md:hidden items-center">
-                        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-slate-600">
+                    <div className="flex lg:hidden items-center">
+                        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-slate-950 focus:outline-none">
                             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                         </button>
                     </div>
@@ -55,15 +69,18 @@ export function Navbar() {
 
             {/* Mobile Nav */}
             {mobileMenuOpen && (
-                <div className="md:hidden bg-white border-b border-slate-200 absolute w-full left-0 top-20 shadow-lg">
-                    <div className="px-4 pt-2 pb-6 space-y-2">
+                <div className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 absolute w-full left-0 top-full shadow-2xl origin-top animate-in fade-in slide-in-from-top-2">
+                    <div className="px-4 py-6 space-y-2">
                         {navLinks.map((link) => (
-                            <Link key={link.name} href={link.href} className="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50" onClick={() => setMobileMenuOpen(false)}>
+                            <Link key={link.name} href={link.href} className="block px-4 py-3 rounded-xl text-lg font-bold text-slate-800 hover:text-accent-500 hover:bg-slate-50 transition-colors uppercase tracking-wider" onClick={() => setMobileMenuOpen(false)}>
                                 {link.name}
                             </Link>
                         ))}
-                        <div className="px-3 pt-4">
-                            <Button variant="primary" className="w-full">Book Free Demo</Button>
+                        <div className="px-4 pt-6 pb-2 grid grid-cols-2 gap-4 border-t border-slate-100 mt-4">
+                            <Link href="/contact" className="flex items-center justify-center font-bold text-slate-900 bg-slate-100 rounded-xl py-3 uppercase tracking-wider" onClick={() => setMobileMenuOpen(false)}>Log In</Link>
+                            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                                <Button variant="secondary" className="w-full py-3 h-auto leading-none text-sm uppercase tracking-wider">Explore Portal</Button>
+                            </Link>
                         </div>
                     </div>
                 </div>

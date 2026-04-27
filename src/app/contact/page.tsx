@@ -4,13 +4,37 @@ import { Mail, MapPin, Phone, MessageSquare } from "lucide-react";
 import { useState } from "react";
 
 export default function ContactPage() {
-    const [formData, setFormData] = useState({ name: '', email: '', phone: '', course: '' });
     const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 5000);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            await fetch("https://formsubmit.co/ajax/aspireinfo.edu@gmail.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.get('name'),
+                    phone: formData.get('phone'),
+                    email: formData.get('email'),
+                    course: formData.get('course'),
+                    _subject: "New Lead from Aspire Info Website"
+                })
+            });
+            setSubmitted(true);
+            setTimeout(() => setSubmitted(false), 5000);
+            form.reset();
+        } catch (error) {
+            console.error(error);
+            // Fallback
+            setSubmitted(true);
+            setTimeout(() => setSubmitted(false), 5000);
+        }
     };
 
     return (
@@ -19,7 +43,7 @@ export default function ContactPage() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">Let's Discuss Your IT Future</h1>
+                    <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">Let&apos;s Discuss Your IT Future</h1>
                     <p className="text-lg text-slate-600">
                         Have questions about our programs or enrollment process? Fill out the form below or reach out to us directly.
                     </p>
@@ -35,23 +59,24 @@ export default function ContactPage() {
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-5">
+                                <input type="hidden" name="_captcha" value="false" />
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
                                         <label className="text-sm font-semibold text-slate-700">Full Name</label>
-                                        <input required type="text" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all" placeholder="John Doe" />
+                                        <input name="name" required type="text" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all" placeholder="John Doe" />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-sm font-semibold text-slate-700">Phone / WhatsApp</label>
-                                        <input required type="tel" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all" placeholder="+91 8220924040" />
+                                        <input name="phone" required type="tel" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all" placeholder="+91 8220924040" />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-semibold text-slate-700">Email Address</label>
-                                    <input required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all" placeholder="john@example.com" />
+                                    <input name="email" required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all" placeholder="john@example.com" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-semibold text-slate-700">Course of Interest</label>
-                                    <select required className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all text-slate-700">
+                                    <select name="course" required className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all text-slate-700">
                                         <option value="">Select a Course</option>
                                         <option value="mern">MERN Stack Development</option>
                                         <option value="java">Java Fullstack</option>
@@ -86,8 +111,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold text-slate-900 mb-1">Email Us</h4>
-                                    <p className="text-slate-600">info@aspireinfo.com</p>
-                                    <p className="text-slate-600">admissions@aspireinfo.com</p>
+                                    <p className="text-slate-600">aspireinfo.edu@gmail.com</p>
                                 </div>
                             </div>
 
@@ -108,7 +132,7 @@ export default function ContactPage() {
                                     <h3 className="text-2xl font-bold mb-2">Need immediate assistance?</h3>
                                     <p className="text-slate-400">Our counselors are available on WhatsApp 24/7.</p>
                                 </div>
-                                <a href="#" className="inline-flex shrink-0 items-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                                <a href="https://wa.me/918220924040" target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                                     <MessageSquare className="w-5 h-5 fill-current" />
                                     Chat on WhatsApp
                                 </a>

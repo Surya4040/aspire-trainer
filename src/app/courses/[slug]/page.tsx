@@ -48,7 +48,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                     </div>
                     <div className="flex gap-4">
                         <Link href="/contact">
-                            <Button variant="primary" className="px-8 py-4 text-lg bg-accent-500 hover:bg-accent-600 text-white shadow-[0_0_20px_rgba(14,165,233,0.4)]">Enroll Now</Button>
+                            <Button variant="primary" className="px-8 py-4 text-lg bg-accent-500 hover:bg-accent-600 text-white shadow-lg shadow-blue-500/40">Enroll Now</Button>
                         </Link>
                         <Button variant="outline" className="px-8 py-4 text-lg border-white/20 text-white hover:bg-white/10 hover:text-white">Download Syllabus</Button>
                     </div>

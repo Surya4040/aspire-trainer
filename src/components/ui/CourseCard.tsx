@@ -1,5 +1,3 @@
-"use client";
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, Clock, BookOpen } from 'lucide-react';
 
@@ -13,53 +11,53 @@ interface CourseCardProps {
     delay?: number;
 }
 
-export function CourseCard({ title, description, slug, duration = "3 Months", modules = 12, tags = [], delay = 0 }: CourseCardProps) {
+export function CourseCard({ title, description, slug, duration = "3 Months", modules = 12, tags = [] }: CourseCardProps) {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-            whileHover={{ y: -5 }}
-            className="bg-brand-950 rounded p-px isolate relative group h-full flex flex-col"
-        >
-            {/* Outer Border Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/5 to-white/10 rounded group-hover:from-accent-500/50 group-hover:to-blue-500/50 transition-colors duration-500 -z-10"></div>
+        <div className="group relative bg-brand-900/80 rounded-2xl border border-white/10 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-accent-500/50 hover:bg-brand-900 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-accent-500/10 cursor-pointer overflow-hidden backdrop-blur-md">
+            {/* Ambient hover glow */}
+            <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-accent-500/10 rounded-full blur-2xl group-hover:bg-accent-500/25 transition-all pointer-events-none" />
 
-            <div className="bg-brand-900 rounded-[3px] p-6 h-full flex flex-col relative z-0 overflow-hidden">
-                {/* Inner subtle glow */}
-                <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl group-hover:bg-accent-500/20 transition-colors duration-700"></div>
-
-                <div className="flex gap-2 flex-wrap mb-6 relative z-10">
+            <div className="relative z-10">
+                <div className="flex gap-2 flex-wrap mb-4">
                     {tags.map((tag, idx) => (
-                        <span key={idx} className="text-xs font-bold px-3 py-1 bg-white/5 text-blue-300 rounded border border-white/10 uppercase tracking-widest">
+                        <span 
+                            key={idx} 
+                            className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 bg-white/5 border border-white/10 text-accent-400 rounded-md group-hover:border-accent-500/30 transition-colors"
+                        >
                             {tag}
                         </span>
                     ))}
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-accent-400 transition-colors relative z-10 leading-tight">
+                <h3 className="text-lg font-bold text-white mb-2 leading-snug group-hover:text-accent-300 transition-colors">
                     {title}
                 </h3>
 
-                <p className="text-slate-400 text-sm mb-8 flex-1 leading-relaxed relative z-10">
+                <p className="text-slate-300/80 text-xs sm:text-sm mb-6 leading-relaxed font-light">
                     {description}
                 </p>
+            </div>
 
-                <div className="flex gap-6 mb-6 pt-6 border-t border-white/10 text-xs text-slate-300 font-semibold tracking-wide uppercase relative z-10">
-                    <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-blue-400" /> {duration}
+            <div className="relative z-10 pt-4 border-t border-white/10">
+                <div className="flex items-center justify-between text-xs text-slate-400 mb-4">
+                    <div className="flex items-center gap-1.5 font-medium">
+                        <Clock className="w-3.5 h-3.5 text-accent-400" />
+                        <span>{duration}</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <BookOpen className="w-4 h-4 text-blue-400" /> {modules} Modules
+                    <div className="flex items-center gap-1.5 font-medium">
+                        <BookOpen className="w-3.5 h-3.5 text-accent-400" />
+                        <span>{modules} Modules</span>
                     </div>
                 </div>
 
-                <Link href={`/courses/${slug}`} className="inline-flex items-center text-accent-400 font-bold uppercase tracking-widest text-sm group/btn mt-auto relative z-10">
-                    Explore Program
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-2 transition-transform" />
+                <Link
+                    href={`/courses/${slug}`}
+                    className="inline-flex items-center justify-center w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-white bg-white/5 group-hover:bg-gradient-to-r group-hover:from-accent-500 group-hover:to-accent-600 border border-white/10 group-hover:border-transparent rounded-xl transition-all duration-300 gap-2 shadow-sm group-hover:shadow-lg group-hover:shadow-accent-500/30"
+                >
+                    <span>View Curriculum</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </Link>
             </div>
-        </motion.div>
+        </div>
     );
 }

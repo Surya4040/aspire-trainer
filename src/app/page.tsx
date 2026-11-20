@@ -1,17 +1,19 @@
 import { Hero } from "@/components/sections/Hero";
-import { CoursesHighlight } from "@/components/sections/CoursesHighlight";
+import { CoreServices } from "@/components/sections/CoreServices";
+import { DomainShowcase } from "@/components/sections/DomainShowcase";
 import { Features } from "@/components/sections/Features";
 import { CareerOutcomes } from "@/components/sections/CareerOutcomes";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { CoursesHighlight } from "@/components/sections/CoursesHighlight";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <CoursesHighlight />
+      <CoreServices />
+      <DomainShowcase />
       <Features />
       <CareerOutcomes />
-      <Testimonials />
+      <CoursesHighlight />
     </>
   );
 }

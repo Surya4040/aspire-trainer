@@ -1,51 +1,151 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle2, Users, Globe, TrendingUp, ShieldCheck, Sparkles, ArrowRight } from "lucide-react";
+import Link from 'next/link';
+import { Button } from "@/components/ui/Button";
 
 export const metadata = {
-    title: "About Us | Aspire Info",
-    description: "Learn about Aspire Info's vision, mission, and how we are bridging the gap between college and the IT industry."
+    title: "About Us | Aspire Info — Technical Faculty Staffing & Digital Services",
+    description: "Learn about Aspire Info, bridging technical instructor talent for colleges and enterprises across India, bespoke web engineering, and performance marketing."
 };
+
+const principles = [
+    {
+        title: "Hands-On Practical Delivery",
+        desc: "Whether delivering a college campus bootcamp or engineering a business web application, we prioritize working code and tangible outcomes over dry theory."
+    },
+    {
+        title: "Rigorous Technical Vetting",
+        desc: "Every trainer on our roster is evaluated on active programming proficiency, architecture knowledge, and structured classroom communication."
+    },
+    {
+        title: "Transparent Turnaround & SLA",
+        desc: "Fast 48 to 72 hour trainer shortlisting, clear milestones, and straightforward pricing without confusing technical jargon or recruitment friction."
+    }
+];
 
 export default function AboutPage() {
     return (
-        <div className="bg-white min-h-screen pt-12 pb-24">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-brand-950 text-white min-h-screen py-16 sm:py-24 relative overflow-hidden">
+            {/* Ambient Background Orbs */}
+            <div className="absolute top-1/4 -right-1/4 w-[700px] h-[700px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none mix-blend-screen" />
+            <div className="absolute bottom-0 -left-1/4 w-[600px] h-[600px] bg-accent-600/15 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
+            <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none"></div>
 
-                <section className="mb-20 text-center max-w-4xl mx-auto">
-                    <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Our Mission is Your <span className="text-brand-600">Growth</span></h1>
-                    <p className="text-xl text-slate-600 leading-relaxed">
-                        At Aspire Info, we believe that practical execution is the only true way to learn software engineering.
-                        We strive to bridge the massive gap between academic curricula and actual industry expectations.
-                    </p>
-                </section>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-                <section className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24 items-center">
-                    <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-brand-100 rounded-bl-full -z-10"></div>
-                        <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Vision</h2>
-                        <p className="text-slate-600 text-lg leading-relaxed mb-6">
-                            To be the most trusted emerging Ed-Tech startup from Tamil Nadu, creating a generation of developers who build skills through execution.
-                        </p>
-                        <ul className="space-y-3">
-                            <li className="flex items-center gap-3"><CheckCircle className="text-brand-500 w-5 h-5" /> Make high-quality tech education accessible online.</li>
-                            <li className="flex items-center gap-3"><CheckCircle className="text-brand-500 w-5 h-5" /> Ensure continuous industry alignment.</li>
-                            <li className="flex items-center gap-3"><CheckCircle className="text-brand-500 w-5 h-5" /> Foster a community of lifelong learners.</li>
-                        </ul>
+                {/* Header */}
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded border border-white/10 bg-white/5 backdrop-blur-md text-white font-medium text-xs tracking-widest uppercase mb-6">
+                        <span className="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+                        About Aspire Info
                     </div>
+                    <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6 uppercase">
+                        BRIDGING TECH TALENT &amp; <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-accent-500">
+                            DIGITAL EXECUTION.
+                        </span>
+                    </h1>
+                    <p className="text-lg text-slate-300/80 leading-relaxed font-light">
+                        Operating out of Tamil Nadu and serving institutions and enterprises across India, Aspire Info provides industry-vetted technical faculty staffing, bespoke web engineering, and performance growth marketing.
+                    </p>
+                </div>
 
-                    <div>
-                        <div className="aspect-square bg-brand-50 rounded-full w-full max-w-md mx-auto relative flex items-center justify-center p-12">
-                            <div className="text-center">
-                                <div className="text-6xl font-black text-brand-600 mb-4">Focus</div>
-                                <div className="text-2xl font-semibold text-slate-800">Code. Practice.<br />Master Skills.</div>
+                {/* Core Operations & Philosophy */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20 items-stretch">
+                    
+                    {/* Left: Core Capabilities */}
+                    <div className="lg:col-span-7 bg-brand-900/80 border border-white/10 p-8 sm:p-10 rounded-2xl backdrop-blur-md shadow-2xl flex flex-col justify-between">
+                        <div>
+                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent-400 mb-2 block">
+                                Core Capabilities
+                            </span>
+                            <h2 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mb-4">
+                                Purpose-Built for Colleges &amp; Growing Tech Teams
+                            </h2>
+                            <p className="text-slate-300 text-sm leading-relaxed mb-8 font-light">
+                                We partner directly with university deans, placement directors, training heads, and startup founders who require verified subject-matter experts and production-grade digital assets without administrative friction.
+                            </p>
+
+                            <div className="space-y-4">
+                                <div className="flex items-start gap-3.5 p-4 rounded-xl bg-brand-950/60 border border-white/10">
+                                    <Users className="w-5 h-5 text-accent-400 shrink-0 mt-0.5" />
+                                    <div>
+                                        <div className="font-bold text-white text-sm">Technical Trainer Sourcing</div>
+                                        <p className="text-slate-400 text-xs mt-0.5 font-light">Deploying 120+ vetted mentors across Fullstack, AI, Java, Python, QA, and Cloud for campus bootcamps.</p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-3.5 p-4 rounded-xl bg-brand-950/60 border border-white/10">
+                                    <Globe className="w-5 h-5 text-accent-400 shrink-0 mt-0.5" />
+                                    <div>
+                                        <div className="font-bold text-white text-sm">Bespoke Web Development</div>
+                                        <p className="text-slate-400 text-xs mt-0.5 font-light">Engineered with Next.js, React, and modern cloud stacks for 95+ PageSpeed scores and lead conversion.</p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-3.5 p-4 rounded-xl bg-brand-950/60 border border-white/10">
+                                    <TrendingUp className="w-5 h-5 text-accent-400 shrink-0 mt-0.5" />
+                                    <div>
+                                        <div className="font-bold text-white text-sm">SEO &amp; Performance Marketing</div>
+                                        <p className="text-slate-400 text-xs mt-0.5 font-light">Page-1 Google ranking strategies and high-ROAS targeted ad campaigns delivering qualified inquiries.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
 
-                <section className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-4">Passionate About Building the Future</h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto mb-8">We are a dedicated startup with a deep focus on teaching coding the right way—through execution entirely online.</p>
-                </section>
+                    {/* Right: Operating Principles */}
+                    <div className="lg:col-span-5 bg-gradient-to-b from-brand-900 to-brand-950 border border-white/10 p-8 sm:p-10 rounded-2xl backdrop-blur-md shadow-2xl flex flex-col justify-between">
+                        <div>
+                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent-400 mb-2 block">
+                                Quality Standards
+                            </span>
+                            <h2 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mb-6">
+                                Operating Principles
+                            </h2>
+
+                            <div className="space-y-6">
+                                {principles.map((pr, idx) => (
+                                    <div key={idx} className="border-b border-white/10 pb-5 last:border-b-0 last:pb-0">
+                                        <div className="flex items-center gap-2 mb-1.5">
+                                            <CheckCircle2 className="w-4 h-4 text-accent-500" />
+                                            <h3 className="font-bold text-white text-sm uppercase tracking-wide">{pr.title}</h3>
+                                        </div>
+                                        <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed pl-6">{pr.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="pt-6 border-t border-white/10 mt-6">
+                            <div className="text-[11px] font-mono text-accent-400 uppercase tracking-widest">
+                                Pan-India Institutional Network
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom CTA Banner */}
+                <div className="bg-brand-900/80 border border-white/10 rounded-2xl p-8 sm:p-12 text-center max-w-4xl mx-auto backdrop-blur-md shadow-2xl">
+                    <h2 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mb-3">
+                        Discuss Your Upcoming Requirements
+                    </h2>
+                    <p className="text-slate-300 text-sm max-w-xl mx-auto mb-8 font-light leading-relaxed">
+                        Reach out to discuss your college campus bootcamp timeline, website engineering project, or performance marketing targets.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <Link href="/trainers">
+                            <Button variant="secondary" className="px-8 py-3.5 text-xs uppercase tracking-wider">
+                                Hire a Trainer &rarr;
+                            </Button>
+                        </Link>
+                        <Link href="/contact">
+                            <Button variant="outline" className="px-8 py-3.5 text-xs uppercase tracking-wider bg-white/5 border-white/10 hover:bg-white/10">
+                                General Inquiries &rarr;
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+
             </div>
         </div>
     );

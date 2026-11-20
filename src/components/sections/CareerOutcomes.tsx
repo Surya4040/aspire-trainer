@@ -1,51 +1,32 @@
-"use client";
-import { motion } from 'framer-motion';
-import { TrendingUp, Award, Building2, Code2 } from 'lucide-react';
+import { Users, BookOpen, Monitor, Award } from 'lucide-react';
 
 const stats = [
-    { icon: <Code2 className="w-6 h-6" />, value: "Hands-on", label: "Practical Training" },
-    { icon: <TrendingUp className="w-6 h-6" />, value: "Modern", label: "Tech Stack" },
-    { icon: <Award className="w-6 h-6" />, value: "Quality", label: "Curriculum" },
-    { icon: <Building2 className="w-6 h-6" />, value: "Online", label: "Remote Access" }
+    { icon: <Users className="w-6 h-6 text-accent-400" />, value: "120+", label: "Vetted Tech Faculty" },
+    { icon: <BookOpen className="w-6 h-6 text-blue-400" />, value: "50+", label: "Partner Institutions" },
+    { icon: <Monitor className="w-6 h-6 text-emerald-400" />, value: "200+", label: "Web Applications Built" },
+    { icon: <Award className="w-6 h-6 text-purple-400" />, value: "10k+", label: "Students Upskilled" }
 ];
 
 export function CareerOutcomes() {
     return (
-        <section className="py-32 bg-brand-950 text-white relative overflow-hidden border-b border-white/10">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-600 rounded-full blur-[150px] mix-blend-screen opacity-20 -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600 rounded-full blur-[120px] mix-blend-screen opacity-20 translate-y-1/2 -translate-x-1/2" />
-
+        <section className="py-20 bg-brand-950 text-white border-b border-white/10 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <h2 className="text-blue-500 font-bold mb-4 tracking-widest uppercase text-sm">Your Skill Progression</h2>
-                        <h3 className="text-4xl lg:text-5xl font-black mb-6 uppercase tracking-tight">Focus on Execution.</h3>
-                        <p className="text-lg text-slate-400 font-light max-w-2xl mx-auto">
-                            Our training is focused entirely on providing real value through practical learning. Elevate your skills from anywhere in the state.
-                        </p>
-                    </motion.div>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                     {stats.map((stat, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1, duration: 0.5 }}
-                            className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded text-center hover:bg-white/10 transition-colors shadow-2xl shadow-black/50"
+                        <div 
+                            key={idx} 
+                            className="bg-brand-900/80 border border-white/10 rounded-2xl p-6 sm:p-8 text-center backdrop-blur-md shadow-xl hover:border-accent-500/40 hover:-translate-y-1 transition-all duration-300"
                         >
-                            <div className="w-12 h-12 bg-blue-500/20 rounded flex items-center justify-center mx-auto mb-6 text-blue-400 border border-blue-500/30">
+                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 mb-4">
                                 {stat.icon}
                             </div>
-                            <div className="text-3xl font-black mb-2 text-white tracking-widest">{stat.value}</div>
-                            <div className="text-slate-400 text-xs font-bold uppercase tracking-widest">{stat.label}</div>
-                        </motion.div>
+                            <div className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-2">
+                                {stat.value}
+                            </div>
+                            <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
+                                {stat.label}
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>

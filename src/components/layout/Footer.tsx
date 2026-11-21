@@ -8,8 +8,8 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
                     <div className="md:col-span-1">
                         <Link href="/" className="flex items-center gap-2.5 mb-4 group">
-                            <div className="w-9 h-9 rounded-lg bg-brand-900 border border-white/10 text-white font-bold text-sm flex items-center justify-center group-hover:border-accent-500/40 transition-colors">
-                                A
+                            <div className="w-9 h-9 rounded-lg bg-brand-900 border border-white/10 text-white flex items-center justify-center group-hover:border-accent-500/40 transition-colors p-1.5">
+                                <img src="/logo-mark.svg" alt="Aspire Logo" className="w-full h-full object-contain" />
                             </div>
                             <span className="text-xl font-black tracking-tight text-white group-hover:text-accent-400 transition-colors">
                                 Aspire<span className="text-accent-500">.</span>

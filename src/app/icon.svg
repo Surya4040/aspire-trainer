@@ -1,4 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="20" fill="#020617"/>
-  <text x="50" y="70" font-family="Arial, sans-serif" font-size="65" font-weight="900" fill="#f43f5e" text-anchor="middle">A</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="favCoral" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="60%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#be123c" />
+    </linearGradient>
+
+    <linearGradient id="favBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="60%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Rounded Container -->
+  <rect width="200" height="200" rx="44" fill="#020617" />
+  <rect width="196" height="196" x="2" y="2" rx="42" stroke="rgba(255,255,255,0.12)" stroke-width="2" fill="none" />
+
+  <!-- Left Wing -->
+  <path
+    d="M 100,32 L 74,32 L 32,168 L 66,168 L 86,110 L 100,68 Z"
+    fill="url(#favBlue)"
+  />
+
+  <!-- Right Wing -->
+  <path
+    d="M 100,32 L 126,32 L 168,168 L 134,168 L 114,110 L 100,68 Z"
+    fill="url(#favCoral)"
+  />
+
+  <!-- Apex Arrow -->
+  <path
+    d="M 68,138 L 100,104 L 132,138 L 118,148 L 100,128 L 82,148 Z"
+    fill="#ffffff"
+  />
+
+  <!-- Accent Pulse Dot -->
+  <circle cx="100" cy="84" r="5" fill="#f43f5e" />
 </svg>

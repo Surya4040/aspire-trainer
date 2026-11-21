@@ -38,8 +38,8 @@ export function Navbar() {
                 <div className="flex justify-between items-center h-16">
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center gap-3 group">
-                            <div className="w-10 h-10 bg-brand-900 rounded-lg shadow-md shadow-accent-500/20 flex items-center justify-center border border-white/10 group-hover:border-accent-500/40 transition-colors">
-                                <span className="text-xl font-black text-white">A</span>
+                            <div className="w-10 h-10 bg-brand-900/90 rounded-xl shadow-md shadow-accent-500/20 flex items-center justify-center border border-white/10 group-hover:border-accent-500/50 transition-all p-1.5">
+                                <img src="/logo-mark.svg" alt="Aspire Logo" className="w-full h-full object-contain" />
                             </div>
                             <div className="text-3xl font-black tracking-tighter">
                                 <span className="text-white">Aspire</span>

@@ -58,23 +58,19 @@ const heroSlides = [
 
 export function Hero() {
     const [current, setCurrent] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
-        if (isPaused) return;
         const timer = setInterval(() => {
             setCurrent((prev) => (prev + 1) % heroSlides.length);
-        }, 5000);
+        }, 4000);
         return () => clearInterval(timer);
-    }, [isPaused]);
+    }, [current]);
 
     const active = heroSlides[current];
 
     return (
         <section 
             className="relative overflow-hidden bg-brand-950 min-h-[92vh] flex items-center pt-24 pb-20 border-b border-white/10"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
         >
             <div className="absolute inset-0 grid-bg opacity-30"></div>
 
@@ -86,10 +82,10 @@ export function Hero() {
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={current}
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                        exit={{ opacity: 0, y: -15 }}
+                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                         className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[460px]"
                     >
                         {/* Left Side: Animated Copy */}
@@ -175,19 +171,30 @@ export function Hero() {
 
                 {/* Bottom Carousel Navigation Controls */}
                 <div className="flex items-center justify-between pt-8 mt-6 border-t border-white/10">
-                    <div className="flex items-center gap-2">
-                        {heroSlides.map((_, idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => setCurrent(idx)}
-                                className={`h-2 rounded-full transition-all duration-300 ${
-                                    current === idx
-                                        ? 'w-10 bg-accent-500'
-                                        : 'w-2.5 bg-white/20 hover:bg-white/40'
-                                }`}
-                                aria-label={`Slide ${idx + 1}`}
-                            />
-                        ))}
+                    <div className="flex items-center gap-2.5">
+                        {heroSlides.map((_, idx) => {
+                            const isCurrent = current === idx;
+                            return (
+                                <button
+                                    key={idx}
+                                    onClick={() => setCurrent(idx)}
+                                    className={`relative h-2 rounded-full overflow-hidden transition-all duration-300 focus:outline-none ${
+                                        isCurrent ? 'w-12 bg-white/20' : 'w-2.5 bg-white/20 hover:bg-white/40'
+                                    }`}
+                                    aria-label={`Slide ${idx + 1}`}
+                                >
+                                    {isCurrent && (
+                                        <motion.div
+                                            key={`progress-${current}`}
+                                            initial={{ width: "0%" }}
+                                            animate={{ width: "100%" }}
+                                            transition={{ duration: 4, ease: "linear" }}
+                                            className="h-full bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"
+                                        />
+                                    )}
+                                </button>
+                            );
+                        })}
                     </div>
 
                     <div className="flex items-center gap-2">

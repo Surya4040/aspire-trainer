@@ -70,7 +70,7 @@ export function Footer() {
                         <Link href="/about" className="hover:text-white transition-colors">About</Link>
                         <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
                         <Link href="/courses" className="hover:text-white transition-colors">Courses</Link>
-                        <Link href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</Link>
+                        <Link href="/trainers" className="hover:text-white transition-colors">Hire Trainers</Link>
                     </div>
                 </div>
             </div>

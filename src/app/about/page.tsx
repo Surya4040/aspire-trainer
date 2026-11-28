@@ -1,10 +1,46 @@
 import { CheckCircle2, Users, Globe, TrendingUp, ShieldCheck, Sparkles, ArrowRight } from "lucide-react";
 import Link from 'next/link';
 import { Button } from "@/components/ui/Button";
+import type { Metadata } from "next";
 
-export const metadata = {
-    title: "About Us | Aspire Info — Technical Faculty Staffing & Digital Services",
-    description: "Learn about Aspire Info, bridging technical instructor talent for colleges and enterprises across India, bespoke web engineering, and performance marketing."
+export const metadata: Metadata = {
+    title: "About Us | Aspire Info — Training Vendors & Application Development in Coimbatore",
+    description: "Learn about Aspire Info in Coimbatore. We bridge industry-vetted technical instructors for engineering colleges, craft modern Next.js web applications, and execute high-performance digital marketing search engine strategies.",
+    alternates: {
+        canonical: "https://www.aspireinfoedu.in/about",
+    },
+    keywords: [
+        "about aspire info coimbatore",
+        "training vendors in coimbatore",
+        "training ventors in coimbatore",
+        "application development in coimbatore",
+        "digital marketing search engine coimbatore",
+        "best online course in coimbatore institute",
+        "technical faculty staffing coimbatore",
+        "it consultancy coimbatore"
+    ],
+    openGraph: {
+        title: "About Us | Aspire Info Coimbatore",
+        description: "Technical training vendors, custom web application development, and digital marketing in Coimbatore and India.",
+        url: "https://www.aspireinfoedu.in/about",
+        siteName: "Aspire Info",
+        locale: "en_IN",
+        type: "website",
+        images: [
+            {
+                url: "https://www.aspireinfoedu.in/logo.svg",
+                width: 1200,
+                height: 630,
+                alt: "About Aspire Info Coimbatore",
+            }
+        ]
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About Us | Aspire Info Coimbatore",
+        description: "Technical faculty staffing and web application development firm in Coimbatore.",
+        images: ["https://www.aspireinfoedu.in/logo.svg"],
+    }
 };
 
 const principles = [

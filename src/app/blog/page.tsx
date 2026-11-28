@@ -1,9 +1,45 @@
 import Link from 'next/link';
 import { Sparkles, Calendar, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
 
-export const metadata = {
-    title: "Blog & Insights | Aspire Info",
-    description: "Read our latest articles on software development, tech faculty staffing, and web engineering."
+export const metadata: Metadata = {
+    title: "Blog & Technical Insights | Training Vendors, Web Engineering & SEO | Aspire Info",
+    description: "Explore technical articles on hiring training vendors in Coimbatore, full stack web application development, cracking tech interviews, and modern digital marketing strategies.",
+    alternates: {
+        canonical: "https://www.aspireinfoedu.in/blog",
+    },
+    keywords: [
+        "aspire info blog",
+        "training vendors in coimbatore insights",
+        "application development guides",
+        "digital marketing search engine tips",
+        "best online course in coimbatore reviews",
+        "cracking software interviews 2026",
+        "mern stack vs nextjs",
+        "sdet automation frameworks"
+    ],
+    openGraph: {
+        title: "Blog & Technical Insights | Aspire Info Coimbatore",
+        description: "Technical articles on modern software engineering, faculty staffing, and digital growth.",
+        url: "https://www.aspireinfoedu.in/blog",
+        siteName: "Aspire Info",
+        locale: "en_IN",
+        type: "website",
+        images: [
+            {
+                url: "https://www.aspireinfoedu.in/logo.svg",
+                width: 1200,
+                height: 630,
+                alt: "Aspire Info Technical Blog",
+            }
+        ]
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Blog & Technical Insights | Aspire Info",
+        description: "Technical articles on software engineering, faculty staffing, and digital growth.",
+        images: ["https://www.aspireinfoedu.in/logo.svg"],
+    }
 };
 
 const articles = [

@@ -15,18 +15,64 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
         keywords: [
             `best online course in coimbatore`,
+            `best online courses in coimbatore`,
             `${courseTitle.toLowerCase()} course in coimbatore`,
             `best ${courseTitle.toLowerCase()} training in coimbatore`,
             `${courseTitle.toLowerCase()} online training india`,
             `software training institute in coimbatore`,
-            `it courses in gandhipuram peelamedu coimbatore`
-        ]
+            `it courses in gandhipuram peelamedu coimbatore`,
+            `job oriented ${courseTitle.toLowerCase()} course with placement`
+        ],
+        openGraph: {
+            title: `${courseTitle} Course in Coimbatore | Aspire Info`,
+            description: `Best online ${courseTitle} training course in Coimbatore with in-browser coding practice IDE and placement support.`,
+            url: `https://www.aspireinfoedu.in/courses/${slug}`,
+            siteName: "Aspire Info",
+            locale: "en_IN",
+            type: "website",
+            images: [
+                {
+                    url: "https://www.aspireinfoedu.in/logo.svg",
+                    width: 1200,
+                    height: 630,
+                    alt: `${courseTitle} Course - Aspire Info Coimbatore`,
+                }
+            ]
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${courseTitle} Course in Coimbatore | Aspire Info`,
+            description: `Hands-on ${courseTitle} course in Coimbatore with cloud IDE practice.`,
+            images: ["https://www.aspireinfoedu.in/logo.svg"],
+        }
     };
 }
 
 export default async function CourseDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const courseTitle = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+    const courseSchema = {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": `${courseTitle} Course in Coimbatore`,
+        "description": `Best online ${courseTitle} course in Coimbatore with in-browser practice IDE, mentor reviews, and job placement assistance.`,
+        "provider": {
+            "@type": "Organization",
+            "name": "Aspire Info",
+            "url": "https://www.aspireinfoedu.in"
+        },
+        "url": `https://www.aspireinfoedu.in/courses/${slug}`,
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "Online",
+            "courseWorkload": "PT12W",
+            "instructor": {
+                "@type": "Person",
+                "name": "Senior Engineering Faculty"
+            }
+        }
+    };
 
     const syllabusModules = [
         { week: "Weeks 1 - 3", title: "Foundation & Core Fundamentals", desc: "Language syntax, data structures, state management, and modern programming paradigms." },
@@ -37,6 +83,10 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
 
     return (
         <div className="min-h-screen bg-brand-950 text-white relative">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+            />
             
             {/* Hero Section */}
             <section className="bg-brand-950 text-white pt-32 pb-20 border-b border-white/10 relative overflow-hidden">

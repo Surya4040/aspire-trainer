@@ -1,16 +1,22 @@
 import { MetadataRoute } from 'next';
+import { blogArticles } from '@/lib/seo-content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.aspireinfoedu.in';
 
-  const routes = [
+  const coreRoutes = [
     '',
     '/trainers',
     '/web-services',
     '/digital-marketing',
     '/courses',
+    '/portal',
     '/about',
     '/contact',
+    '/application-development-coimbatore',
+    '/training-vendors-coimbatore',
+    '/training-vendors-chennai-bangalore',
+    '/best-online-course-coimbatore',
     '/courses/mern-stack',
     '/courses/java-fullstack',
     '/courses/python-fullstack',
@@ -18,16 +24,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/courses/playwright',
     '/courses/ai-ml',
     '/blog',
-    '/blog/crack-product-based-interviews',
-    '/blog/mern-vs-mean-stack',
-    '/blog/top-automation-frameworks',
-    '/blog/future-of-ai-llms',
+    ...blogArticles.map((article) => `/blog/${article.slug}`),
   ];
 
-  return routes.map((route) => ({
+  const highPriorityRoutes = new Set([
+    '/trainers',
+    '/web-services',
+    '/digital-marketing',
+    '/application-development-coimbatore',
+    '/training-vendors-coimbatore',
+    '/training-vendors-chennai-bangalore',
+    '/best-online-course-coimbatore',
+  ]);
+
+  return coreRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === '' || route === '/trainers' || route === '/web-services' || route === '/digital-marketing' ? 'daily' : 'weekly',
-    priority: route === '' ? 1.0 : route === '/trainers' || route === '/web-services' || route === '/digital-marketing' ? 0.9 : 0.8,
+    changeFrequency: route === '' || highPriorityRoutes.has(route) ? 'daily' : 'weekly',
+    priority: route === '' ? 1.0 : highPriorityRoutes.has(route) ? 0.9 : 0.8,
   }));
 }

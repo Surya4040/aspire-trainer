@@ -1,45 +1,57 @@
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import type { Metadata } from 'next';
+import { blogArticles, getBlogArticle } from '@/lib/seo-content';
+import { notFound } from 'next/navigation';
+
+export async function generateStaticParams() {
+    return blogArticles.map((article) => ({
+        slug: article.slug,
+    }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
-    const articleTitle = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    const article = getBlogArticle(slug);
+
+    if (!article) {
+        const fallbackTitle = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        return {
+            title: `${fallbackTitle} | Aspire Info Blog`,
+            description: `Read "${fallbackTitle}" on Aspire Info.`,
+            alternates: { canonical: `https://www.aspireinfoedu.in/blog/${slug}` },
+        };
+    }
 
     return {
-        title: `${articleTitle} | Aspire Info Blog`,
-        description: `Read "${articleTitle}" on the Aspire Info blog. Insights on technical faculty staffing, web application development, and software engineering.`,
+        title: article.metaTitle,
+        description: article.description,
         alternates: {
-            canonical: `https://www.aspireinfoedu.in/blog/${slug}`,
+            canonical: `https://www.aspireinfoedu.in/blog/${article.slug}`,
         },
-        keywords: [
-            articleTitle.toLowerCase(),
-            "aspire info tech blog",
-            "training vendors in coimbatore",
-            "application development in coimbatore",
-            "best online course in coimbatore"
-        ],
+        keywords: article.keywords,
         openGraph: {
-            title: `${articleTitle} | Aspire Info`,
-            description: `Read "${articleTitle}" on Aspire Info.`,
-            url: `https://www.aspireinfoedu.in/blog/${slug}`,
+            title: article.metaTitle,
+            description: article.description,
+            url: `https://www.aspireinfoedu.in/blog/${article.slug}`,
             siteName: "Aspire Info",
             locale: "en_IN",
             type: "article",
+            publishedTime: article.dateISO,
             images: [
                 {
                     url: "https://www.aspireinfoedu.in/logo.svg",
                     width: 1200,
                     height: 630,
-                    alt: articleTitle,
+                    alt: article.title,
                 }
             ]
         },
         twitter: {
             card: "summary_large_image",
-            title: articleTitle,
-            description: `Read "${articleTitle}" on the Aspire Info blog.`,
+            title: article.metaTitle,
+            description: article.description,
             images: ["https://www.aspireinfoedu.in/logo.svg"],
         }
     };
@@ -47,29 +59,54 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const articleTitle = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    const article = getBlogArticle(slug);
+
+    if (!article) {
+        notFound();
+    }
 
     const articleSchema = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": articleTitle,
-        "description": `Read "${articleTitle}" on the Aspire Info blog.`,
-        "url": `https://www.aspireinfoedu.in/blog/${slug}`,
-        "datePublished": "2026-04-15",
-        "author": {
-            "@type": "Organization",
-            "name": "Aspire Info",
-            "url": "https://www.aspireinfoedu.in"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Aspire Info",
-            "url": "https://www.aspireinfoedu.in",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.aspireinfoedu.in/logo.svg"
-            }
-        }
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "headline": article.title,
+                "description": article.description,
+                "url": `https://www.aspireinfoedu.in/blog/${article.slug}`,
+                "datePublished": article.dateISO,
+                "dateModified": article.dateISO,
+                "keywords": article.keywords.join(", "),
+                "author": {
+                    "@type": "Organization",
+                    "name": "Aspire Info",
+                    "url": "https://www.aspireinfoedu.in"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Aspire Info",
+                    "url": "https://www.aspireinfoedu.in",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.aspireinfoedu.in/logo.svg"
+                    }
+                }
+            },
+            ...(article.faqs.length > 0
+                ? [
+                      {
+                          "@type": "FAQPage",
+                          "mainEntity": article.faqs.map((faq) => ({
+                              "@type": "Question",
+                              "name": faq.question,
+                              "acceptedAnswer": {
+                                  "@type": "Answer",
+                                  "text": faq.answer
+                              }
+                          }))
+                      }
+                  ]
+                : [])
+        ]
     };
 
     return (
@@ -84,46 +121,85 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <ArrowLeft className="w-4 h-4 mr-2" /> Back to Articles
                 </Link>
 
+                <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 bg-white/5 border border-white/10 text-accent-400 rounded-md mb-4">
+                    {article.category}
+                </span>
+
                 <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-6 uppercase leading-tight">
-                    {articleTitle}
+                    {article.title}
                 </h1>
 
-                <div className="flex items-center gap-4 text-slate-400 text-xs font-mono mb-10 border-b border-white/10 pb-6">
-                    <span>Published: April 2026</span>
+                <div className="flex flex-wrap items-center gap-4 text-slate-400 text-xs font-mono mb-10 border-b border-white/10 pb-6">
+                    <span>Published: {article.date}</span>
                     <span>•</span>
-                    <span>5 min read</span>
+                    <span>{article.readTime}</span>
                     <span>•</span>
-                    <span className="text-accent-400">Engineering Staff</span>
+                    <span className="text-accent-400">Aspire Info Engineering Team</span>
                 </div>
 
-                <div className="bg-brand-900/80 border border-white/10 rounded-2xl p-8 sm:p-10 backdrop-blur-md shadow-2xl mb-12 space-y-6 text-slate-300 font-light leading-relaxed">
-                    <p className="text-base sm:text-lg text-white font-normal">
-                        Welcome to the detailed engineering analysis on <strong>{articleTitle}</strong>.
+                <div className="bg-brand-900/80 border border-white/10 rounded-2xl p-8 sm:p-10 backdrop-blur-md shadow-2xl mb-12 space-y-8 text-slate-300 font-light leading-relaxed">
+                    <p className="text-base sm:text-lg text-white font-normal leading-relaxed">
+                        {article.intro}
                     </p>
-                    <p>
-                        In today&apos;s fast-evolving software landscape, building scalable architectures and hiring the right technical talent requires a balanced blend of hands-on execution and structured fundamentals.
-                    </p>
-                    <p>
-                        Whether you are an engineering coordinator planning a placement bootcamp, a business owner looking for a high-performance web platform, or a developer leveling up their stack, practical execution remains the primary differentiator.
-                    </p>
+
+                    {article.sections.map((section, idx) => (
+                        <section key={idx} className="space-y-4 pt-4 border-t border-white/10">
+                            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                                {section.heading}
+                            </h2>
+                            {section.paragraphs.map((p, pIdx) => (
+                                <p key={pIdx}>{p}</p>
+                            ))}
+                            {section.bullets && (
+                                <ul className="space-y-3 pt-2">
+                                    {section.bullets.map((bullet, bIdx) => (
+                                        <li key={bIdx} className="flex items-start gap-3 text-sm text-slate-200">
+                                            <CheckCircle2 className="w-4 h-4 text-accent-500 shrink-0 mt-1" />
+                                            <span>{bullet}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </section>
+                    ))}
+
+                    {article.faqs.length > 0 && (
+                        <section className="space-y-4 pt-6 border-t border-white/10">
+                            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                                Frequently Asked Questions
+                            </h2>
+                            <div className="space-y-4">
+                                {article.faqs.map((faq, fIdx) => (
+                                    <div key={fIdx} className="bg-brand-950/60 border border-white/10 rounded-xl p-5">
+                                        <h3 className="text-sm sm:text-base font-bold text-white mb-2">
+                                            {faq.question}
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-slate-300">
+                                            {faq.answer}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+                    )}
                 </div>
 
                 <div className="bg-brand-900 border border-white/10 p-8 sm:p-10 rounded-2xl text-center shadow-2xl">
                     <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-3">
-                        Ready to level up your team or career?
+                        Ready to take the next step?
                     </h3>
                     <p className="text-slate-300 text-sm max-w-lg mx-auto mb-6 font-light">
-                        Deploy verified technical trainers for your campus or explore our project-driven programs.
+                        Partner with Aspire Info across Coimbatore, Chennai, Bangalore &amp; pan-India for technical trainers, web application development, or IT certification tracks.
                     </p>
-                    <div className="flex justify-center gap-4">
-                        <Link href="/trainers">
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <Link href={article.primaryCta.href}>
                             <Button variant="secondary" className="px-6 py-3 text-xs uppercase tracking-wider">
-                                Hire a Trainer &rarr;
+                                {article.primaryCta.label} &rarr;
                             </Button>
                         </Link>
-                        <Link href="/courses">
+                        <Link href={article.secondaryCta.href}>
                             <Button variant="outline" className="px-6 py-3 text-xs uppercase tracking-wider bg-white/5 border-white/10 hover:bg-white/10">
-                                Explore Courses &rarr;
+                                {article.secondaryCta.label} &rarr;
                             </Button>
                         </Link>
                     </div>

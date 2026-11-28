@@ -56,21 +56,15 @@ export function Footer() {
                     </div>
                 </div>
 
-                {/* Hidden SEO Geolocation index for search crawlers without cluttering user UI */}
-                <div className="sr-only">
-                    <h4>Top Local SEO Index — Coimbatore, Tamil Nadu &amp; Pan-India</h4>
-                    <p>
-                        Aspire Info (Coimbatore, Tamil Nadu). Best online course in coimbatore, training vendors in coimbatore, training ventors in coimbatore, corporate training vendors in coimbatore, technical training vendors in coimbatore, college placement training vendors in coimbatore, application development in coimbatore, web application development in coimbatore, website development company in coimbatore, custom software development in coimbatore, digital marketing in coimbatore, digital marketing search engine, seo company in coimbatore, best seo services in coimbatore, search engine optimization coimbatore, google ads agency in coimbatore, hire technical trainers in coimbatore, technical faculty recruitment coimbatore, mern stack training in coimbatore, full stack web development course coimbatore, python training in coimbatore, java fullstack training in coimbatore, sdet automation testing course coimbatore, playwright automation training in coimbatore, best it training institute in coimbatore with placement, it training in gandhipuram, peelamedu, saravanampatti, rs puram, thudiyalur, singanallur, kurichi, pollachi, mettupalayam, tiruppur, erode, salem, madurai, trichy, chennai, bangalore, hyderabad, visakhapatnam, kochi, trivandrum, and all districts across Tamil Nadu, Karnataka, Telangana, Andhra Pradesh, and Kerala. Google Location: https://share.google/K2tk7WqErcGum90bn.
-                    </p>
-                </div>
-
                 <div className="border-t border-white/10 mt-12 pt-6 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <p>&copy; {new Date().getFullYear()} Aspire Info. All rights reserved.</p>
-                    <div className="flex space-x-6 text-slate-400">
+                    <div className="flex flex-wrap gap-6 text-slate-400">
                         <Link href="/about" className="hover:text-white transition-colors">About</Link>
                         <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
                         <Link href="/courses" className="hover:text-white transition-colors">Courses</Link>
                         <Link href="/trainers" className="hover:text-white transition-colors">Hire Trainers</Link>
+                        <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+                        <Link href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</Link>
                     </div>
                 </div>
             </div>

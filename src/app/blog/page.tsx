@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { Sparkles, Calendar, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
+import { blogArticles } from '@/lib/seo-content';
 
 export const metadata: Metadata = {
     title: "Blog & Technical Insights | Training Vendors, Web Engineering & SEO | Aspire Info",
-    description: "Explore technical articles on hiring training vendors in Coimbatore, full stack web application development, cracking tech interviews, and modern digital marketing strategies.",
+    description: "Explore technical articles on hiring training vendors in Coimbatore, Chennai & Bangalore, full stack web application development, cracking tech interviews, and modern digital marketing strategies.",
     alternates: {
         canonical: "https://www.aspireinfoedu.in/blog",
     },
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
         "aspire info blog",
         "training vendors in coimbatore insights",
         "training vendors in chennai bangalore",
-        "application development in bangalore guides",
+        "application development in coimbatore guides",
         "digital marketing search engine tips",
         "best online course in bangalore reviews",
         "best online course in coimbatore reviews",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         "sdet automation frameworks"
     ],
     openGraph: {
-        title: "Blog & Technical Insights | Aspire Info Coimbatore",
+        title: "Blog & Technical Insights | Aspire Info Coimbatore, Chennai & Bangalore",
         description: "Technical articles on modern software engineering, faculty staffing, and digital growth.",
         url: "https://www.aspireinfoedu.in/blog",
         siteName: "Aspire Info",
@@ -44,34 +45,26 @@ export const metadata: Metadata = {
     }
 };
 
-const articles = [
+const regionalGuides = [
     {
-        title: "How to Crack Product-Based Company Interviews in 2026",
-        excerpt: "A comprehensive guide on Data Structures, System Design, and behavioral rounds to secure your dream job.",
-        category: "Career Guidance",
-        date: "April 24, 2026",
-        slug: "crack-product-based-interviews"
+        title: "Application Development in Coimbatore",
+        desc: "Custom Next.js web portals, SaaS dashboards & high-speed sites engineered for Coimbatore enterprises.",
+        href: "/application-development-coimbatore"
     },
     {
-        title: "MERN Stack vs Next.js Full Stack: Which should you choose?",
-        excerpt: "An in-depth comparison of traditional React SPAs vs modern Next.js server components and SSR architecture.",
-        category: "Web Engineering",
-        date: "April 20, 2026",
-        slug: "mern-vs-mean-stack"
+        title: "Training Vendors in Coimbatore",
+        desc: "On-demand technical faculty staffing for engineering college bootcamps and corporate cohorts across Coimbatore.",
+        href: "/training-vendors-coimbatore"
     },
     {
-        title: "Top 5 Automation Testing Frameworks for Modern SDETs",
-        excerpt: "Why Playwright and Selenium continue to dominate the SDET landscape and how CI/CD pipelines automate testing at scale.",
-        category: "QA Automation",
-        date: "April 15, 2026",
-        slug: "top-automation-frameworks"
+        title: "Training Vendors in Chennai & Bangalore",
+        desc: "Rapid 48-72h deployment of vetted IT corporate & campus trainers in OMR, Guindy, Whitefield & Koramangala.",
+        href: "/training-vendors-chennai-bangalore"
     },
     {
-        title: "The Future of AI: Integrating LLMs into Enterprise Web Apps",
-        excerpt: "Learn how modern developers are using APIs to add intelligent retrieval, summarization, and AI copilots to web apps.",
-        category: "AI & ML",
-        date: "April 10, 2026",
-        slug: "future-of-ai-llms"
+        title: "Best Online Course in Coimbatore",
+        desc: "Job-oriented IT certification courses in MERN, Java, Python & SDET with interactive cloud IDE practice.",
+        href: "/best-online-course-coimbatore"
     }
 ];
 
@@ -103,10 +96,10 @@ export default function BlogPage() {
                 </div>
 
                 {/* Articles Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    {articles.map((article, idx) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                    {blogArticles.map((article) => (
                         <div 
-                            key={idx} 
+                            key={article.slug} 
                             className="bg-brand-900/80 rounded-2xl border border-white/10 p-8 hover:border-accent-500/50 hover:bg-brand-900 hover:-translate-y-1.5 transition-all duration-300 backdrop-blur-md shadow-2xl flex flex-col justify-between"
                         >
                             <div>
@@ -137,6 +130,45 @@ export default function BlogPage() {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* Regional & Service Guides Directory */}
+                <div className="border-t border-white/10 pt-16">
+                    <div className="mb-10">
+                        <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent-400 mb-2 block">
+                            Regional Directories
+                        </span>
+                        <h2 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
+                            Coimbatore, Chennai &amp; Bangalore Guides
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        {regionalGuides.map((guide) => (
+                            <Link
+                                key={guide.href}
+                                href={guide.href}
+                                className="group bg-brand-900/60 border border-white/10 hover:border-accent-500/40 rounded-2xl p-6 transition-all flex flex-col justify-between"
+                            >
+                                <div>
+                                    <div className="flex items-center gap-2 text-xs font-mono text-accent-400 uppercase tracking-wider mb-2">
+                                        <MapPin className="w-3.5 h-3.5" />
+                                        <span>Service Overview</span>
+                                    </div>
+                                    <h3 className="text-lg font-bold text-white group-hover:text-accent-400 transition-colors mb-2">
+                                        {guide.title}
+                                    </h3>
+                                    <p className="text-slate-400 text-xs sm:text-sm font-light leading-relaxed mb-4">
+                                        {guide.desc}
+                                    </p>
+                                </div>
+                                <span className="text-xs font-mono font-bold uppercase tracking-wider text-accent-400 inline-flex items-center gap-1">
+                                    <span>View Guide</span>
+                                    <ArrowRight className="w-3.5 h-3.5" />
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

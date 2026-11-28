@@ -44,10 +44,10 @@ export function CoursesHighlight() {
                             Secondary Upskilling Catalog
                         </div>
                         <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
-                            Hands-On IT <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-accent-500">Training Programs.</span>
+                            Best Online Courses in Coimbatore &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-accent-500">IT Training.</span>
                         </h2>
                         <p className="text-slate-300/80 text-base sm:text-lg font-light mt-3 max-w-xl">
-                            Intensive 3-month courses with in-browser code practice and active mentor code reviews.
+                            Ranked as the best online practical IT courses in Coimbatore with in-browser code practice and active mentor code reviews.
                         </p>
                     </div>
                     <Link href="/courses">

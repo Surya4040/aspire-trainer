@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://aspireinfo.com';
+  const baseUrl = 'https://www.aspireinfoedu.in';
 
   const routes = [
     '',
@@ -17,12 +17,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/courses/sdet',
     '/courses/playwright',
     '/courses/ai-ml',
+    '/blog',
+    '/blog/crack-product-based-interviews',
+    '/blog/mern-vs-mean-stack',
+    '/blog/top-automation-frameworks',
+    '/blog/future-of-ai-llms',
   ];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === '' || route === '/trainers' || route === '/web-services' ? 'daily' : 'weekly',
-    priority: route === '' ? 1.0 : route === '/trainers' || route === '/web-services' ? 0.9 : 0.8,
+    changeFrequency: route === '' || route === '/trainers' || route === '/web-services' || route === '/digital-marketing' ? 'daily' : 'weekly',
+    priority: route === '' ? 1.0 : route === '/trainers' || route === '/web-services' || route === '/digital-marketing' ? 0.9 : 0.8,
   }));
 }

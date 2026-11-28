@@ -8,8 +8,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const courseTitle = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
     return {
-        title: `${courseTitle} Practical Training | Aspire Info`,
-        description: `Learn ${courseTitle} with project-driven curriculum, hands-on labs in our practice portal, and active mentor code reviews.`,
+        title: `${courseTitle} Course in Coimbatore & Online | Aspire Info`,
+        description: `Best online ${courseTitle} course in Coimbatore with browser practice portal, real-world capstone projects, and mentor-led technical placement reviews.`,
+        alternates: {
+            canonical: `https://www.aspireinfoedu.in/courses/${slug}`,
+        },
+        keywords: [
+            `best online course in coimbatore`,
+            `${courseTitle.toLowerCase()} course in coimbatore`,
+            `best ${courseTitle.toLowerCase()} training in coimbatore`,
+            `${courseTitle.toLowerCase()} online training india`,
+            `software training institute in coimbatore`,
+            `it courses in gandhipuram peelamedu coimbatore`
+        ]
     };
 }
 

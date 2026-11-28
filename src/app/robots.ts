@@ -19,7 +19,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       }
     ],
-    sitemap: 'https://aspireinfo.com/sitemap.xml',
-    host: 'https://aspireinfo.com',
+    sitemap: 'https://www.aspireinfoedu.in/sitemap.xml',
+    host: 'https://www.aspireinfoedu.in',
   };
 }

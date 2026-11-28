@@ -10,60 +10,82 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aspireinfo.com"),
+  metadataBase: new URL("https://www.aspireinfoedu.in"),
   title: {
-    default: "Aspire Info | Technical Trainer Sourcing, Custom Web Development & Online Courses Across India",
+    default: "Aspire Info | Training Vendors, Web Application Development & Best Online Courses in Coimbatore & India",
     template: "%s | Aspire Info"
   },
-  description: "Aspire Info is India's leading platform for hiring corporate and college technical trainers, bespoke Next.js website creation, performance SEO marketing, and practical online IT certification courses across every single district of Tamil Nadu, Karnataka, Telangana, Andhra Pradesh, Kerala and pan-India.",
+  description: "Aspire Info is the premier technical training vendor in Coimbatore and India. We provide on-demand technical faculty staffing for engineering colleges, custom Next.js web application development in Coimbatore, digital marketing search engine optimization (SEO), and the best online practical IT certification courses across Coimbatore, Tamil Nadu, South India, and pan-India.",
   keywords: [
-    // South Indian Regional & District SEO Keywords
-    // Tamil Nadu Districts
+    // Primary Coimbatore & Local Search Keywords
+    "best online course in coimbatore",
+    "training vendors in coimbatore",
+    "training ventors in coimbatore",
+    "corporate training vendors in coimbatore",
+    "technical training vendors in coimbatore",
+    "college placement training vendors in coimbatore",
+    "application development in coimbatore",
+    "web application development in coimbatore",
+    "website development company in coimbatore",
+    "custom software development in coimbatore",
+    "digital marketing in coimbatore",
+    "digital marketing search engine",
+    "digital marketing agency in coimbatore",
+    "seo company in coimbatore",
+    "best seo services in coimbatore",
+    "search engine optimization coimbatore",
+    "google ads agency in coimbatore",
+    "hire technical trainers in coimbatore",
+    "technical faculty recruitment coimbatore",
+    "mern stack training in coimbatore",
+    "full stack web development course coimbatore",
+    "python training in coimbatore",
+    "java fullstack training in coimbatore",
+    "sdet automation testing course coimbatore",
+    "playwright automation training in coimbatore",
+    "best it training institute in coimbatore with placement",
+    "software courses in gandhipuram coimbatore",
+    "it training in peelamedu saravanampatti coimbatore",
+    "react js next js development company coimbatore",
+
+    // Tamil Nadu & Regional District SEO
     "Hire Technical Trainers Chennai",
-    "Hire Technical Trainers Coimbatore",
-    "College Bootcamp Trainers Madurai",
+    "Technical Faculty Staffing Madurai",
     "IT Corporate Trainers Trichy Tiruchirappalli",
     "Engineering College Faculty Salem Erode",
     "Technical Trainers Tirunelveli Vellore Thanjavur",
-    "Technical Trainer Sourcing Kanyakumari Tuticorin Dindigul",
+    "Placement Bootcamp Trainers Tiruppur Dindigul",
     "Website Development Company Chennai",
-    "Website Creation Services Coimbatore Madurai Trichy",
-    
-    // Karnataka Districts
-    "Hire Technical Trainers Bangalore Bengaluru",
-    "Corporate Technical Trainers Mysore Mysuru",
-    "College Faculty Staffing Mangalore Hubli Belgaum",
-    "Website Development Company Bangalore Karnataka",
+    "Web Application Development Agency Tamil Nadu",
+    "Digital Marketing Agency Tamil Nadu",
 
-    // Telangana & Andhra Pradesh Districts
+    // Karnataka, Telangana, Andhra Pradesh & Kerala
+    "Hire Technical Trainers Bangalore Bengaluru",
+    "Corporate Technical Training Vendors Bangalore",
+    "Website Development Company Bangalore Karnataka",
     "Hire Technical Trainers Hyderabad",
     "College Bootcamp Trainers Warangal Karimnagar",
-    "Technical Faculty Staffing Visakhapatnam Vizag",
-    "Corporate Trainers Vijayawada Guntur Tirupati",
-    "Website Development Services Hyderabad Vizag",
-
-    // Kerala Districts
-    "Hire Technical Trainers Kochi Ernakulam",
+    "Corporate Trainers Visakhapatnam Vizag Vijayawada",
+    "Hire Technical Trainers Kochi Kerala",
     "College Campus Trainers Trivandrum Thiruvananthapuram",
-    "Corporate Faculty Kozhikode Calicut Thrissur",
     "Website Development Company Kochi Kerala",
 
-    // Pan-India & National SEO
+    // Pan-India & High-Intent Commercial SEO
     "Technical Trainer Sourcing India",
-    "Hire Corporate Technical Trainers India",
-    "College Campus Placement Bootcamp Trainers",
+    "Top Corporate Training Vendors in India",
+    "College Campus Placement Bootcamp Instructors",
     "Fullstack Java Python MERN Technical Instructors India",
-    "Online IT Training Courses India",
+    "Online IT Training Courses India with Web IDE",
     "Job Oriented Software Courses India with Placement",
-    "Best MERN Stack Course Online India",
-    "Java Spring Boot Fullstack Course with Live Projects",
-    "Python Django Data Science Online Training India",
-    "Custom Website Development Company India",
     "Bespoke Next.js React Web Development Agency India",
+    "Next.js Application Development Company India",
+    "Custom Business Portal & SaaS Development India",
     "Technical SEO Agency India",
+    "Search Engine Marketing Services India",
+    "Aspire Info Coimbatore",
     "Aspire Info"
   ],
-  authors: [{ name: "Aspire Info", url: "https://aspireinfo.com" }],
+  authors: [{ name: "Aspire Info", url: "https://www.aspireinfoedu.in" }],
   creator: "Aspire Info",
   publisher: "Aspire Info",
   formatDetection: {
@@ -72,28 +94,29 @@ export const metadata: Metadata = {
     address: true,
   },
   alternates: {
-    canonical: "https://aspireinfo.com",
+    canonical: "https://www.aspireinfoedu.in",
   },
   openGraph: {
-    title: "Aspire Info | Technical Trainer Sourcing, Web Development & Online Courses Across India",
-    description: "Source verified IT trainers for engineering colleges & enterprises across every South Indian district, build modern high-speed websites, and upskill with practical online IT courses.",
-    url: "https://aspireinfo.com",
+    title: "Aspire Info | Training Vendors, Web Application Development & Best Online Courses in Coimbatore",
+    description: "Leading technical training vendors in Coimbatore and pan-India. Deploy verified faculty for colleges, build high-performance Next.js web applications, and access the best online practical IT courses.",
+    url: "https://www.aspireinfoedu.in",
     siteName: "Aspire Info",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://aspireinfo.com/icon.svg",
-        width: 800,
-        height: 600,
-        alt: "Aspire Info - South India & Pan India Trainer Staffing & Digital Agency",
+        url: "https://www.aspireinfoedu.in/logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "Aspire Info - Training Vendors, Web Application Development & Online Courses in Coimbatore & India",
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aspire Info | Trainer Sourcing, Web Development & IT Courses Across India",
-    description: "South India district-wide technical faculty staffing, high-speed bespoke website creation, and online coding courses.",
+    title: "Aspire Info | Training Vendors & Application Development in Coimbatore",
+    description: "Best online courses, corporate training vendors, and bespoke web application development in Coimbatore and pan-India.",
+    images: ["https://www.aspireinfoedu.in/logo.svg"],
   },
   robots: {
     index: true,
@@ -113,65 +136,95 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const organizationSchema = {
+  const schemaGraph = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://aspireinfo.com/#organization",
+        "@type": ["Organization", "LocalBusiness", "EducationalOrganization", "ProfessionalService"],
+        "@id": "https://www.aspireinfoedu.in/#organization",
         "name": "Aspire Info",
-        "url": "https://aspireinfo.com",
-        "logo": "https://aspireinfo.com/icon.svg",
-        "description": "Technical trainer sourcing agency, web development firm, and online IT training provider serving colleges, universities, and corporate enterprises across every district of Tamil Nadu, Karnataka, Telangana, Andhra Pradesh, Kerala and all Indian states.",
+        "alternateName": "Aspire Info Coimbatore",
+        "url": "https://www.aspireinfoedu.in",
+        "logo": "https://www.aspireinfoedu.in/logo.svg",
+        "image": "https://www.aspireinfoedu.in/logo.svg",
+        "description": "Aspire Info is the top technical training vendor, custom application development firm, and digital marketing search engine optimization agency in Coimbatore, Tamil Nadu, serving engineering colleges, universities, and corporate clients nationwide.",
         "email": "aspireinfo.edu@gmail.com",
         "telephone": "+918220924040",
+        "hasMap": "https://share.google/K2tk7WqErcGum90bn",
+        "maps": "https://share.google/K2tk7WqErcGum90bn",
+        "priceRange": "₹₹",
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "IN",
-          "addressRegion": "Tamil Nadu & Pan-India"
+          "streetAddress": "Coimbatore",
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "641001",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "11.0168",
+          "longitude": "76.9558"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "19:00"
         },
         "areaServed": [
-          { "@type": "AdministrativeArea", "name": "Tamil Nadu - Chennai, Coimbatore, Madurai, Trichy, Salem, Tirunelveli, Erode, Vellore, Thanjavur, Dindigul, Tiruppur, Kanyakumari" },
-          { "@type": "AdministrativeArea", "name": "Karnataka - Bengaluru, Mysuru, Mangaluru, Hubballi, Belagavi, Davanagere, Udupi" },
-          { "@type": "AdministrativeArea", "name": "Telangana - Hyderabad, Warangal, Karimnagar, Nizamabad, Khammam" },
-          { "@type": "AdministrativeArea", "name": "Andhra Pradesh - Visakhapatnam, Vijayawada, Guntur, Tirupati, Kurnool, Nellore" },
-          { "@type": "AdministrativeArea", "name": "Kerala - Thiruvananthapuram, Kochi, Kozhikode, Thrissur, Kannur, Kollam" },
+          { "@type": "City", "name": "Coimbatore" },
+          { "@type": "AdministrativeArea", "name": "Gandhipuram, Peelamedu, Saravanampatti, RS Puram, Thudiyalur, Coimbatore" },
+          { "@type": "City", "name": "Tiruppur" },
+          { "@type": "City", "name": "Erode" },
+          { "@type": "City", "name": "Salem" },
+          { "@type": "City", "name": "Chennai" },
+          { "@type": "City", "name": "Madurai" },
+          { "@type": "City", "name": "Trichy" },
+          { "@type": "City", "name": "Bengaluru" },
+          { "@type": "City", "name": "Hyderabad" },
+          { "@type": "City", "name": "Kochi" },
+          { "@type": "State", "name": "Tamil Nadu" },
+          { "@type": "State", "name": "Karnataka" },
+          { "@type": "State", "name": "Telangana" },
+          { "@type": "State", "name": "Andhra Pradesh" },
+          { "@type": "State", "name": "Kerala" },
           { "@type": "Country", "name": "India" }
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Aspire Info Core Services",
+          "name": "Aspire Info Services & Course Catalog",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Technical Trainer Sourcing for Colleges & Corporates",
-                "description": "Deploying vetted technical faculty for campus bootcamps, corporate upskilling, and workshops across South India and pan-India."
+                "name": "Technical Training Vendors in Coimbatore & Pan-India",
+                "description": "On-demand subject matter experts and corporate training vendors for college bootcamps, workshops, and enterprise workforce upskilling in Coimbatore and across India."
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Custom Website Creation & Web Development",
-                "description": "Full-stack Next.js and React business websites, corporate portals, and e-commerce stores."
+                "name": "Application Development & Modern Web Engineering in Coimbatore",
+                "description": "Custom Next.js, React, and full-stack web application development, corporate portals, and e-commerce stores in Coimbatore and pan-India."
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Online Practical IT Courses",
-                "description": "Job-oriented intensive 3-month courses in MERN, Java, Python, SDET, and AI with live mentorship."
+                "name": "Digital Marketing & Search Engine Optimization (SEO) in Coimbatore",
+                "description": "Page-1 Google organic search engine ranking optimization, targeted Google Search Ads, and Meta lead generation in Coimbatore and pan-India."
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
-                "@type": "Service",
-                "name": "Search Engine Optimization (SEO) & Performance Marketing",
-                "description": "Technical on-page, local, and district-wide SEO optimization, Google Ads, and Meta advertising."
+                "@type": "Course",
+                "name": "Best Online IT Courses in Coimbatore with Web IDE Practice",
+                "description": "3-month practical career upskilling courses in MERN Stack, Java Fullstack, Python Fullstack, SDET Automation, and AI/ML with live mentorship."
               }
             }
           ]
@@ -179,10 +232,10 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
-        "@id": "https://aspireinfo.com/#website",
-        "url": "https://aspireinfo.com",
+        "@id": "https://www.aspireinfoedu.in/#website",
+        "url": "https://www.aspireinfoedu.in",
         "name": "Aspire Info",
-        "publisher": { "@id": "https://aspireinfo.com/#organization" },
+        "publisher": { "@id": "https://www.aspireinfoedu.in/#organization" },
         "inLanguage": "en-IN"
       }
     ]
@@ -196,10 +249,10 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+      <body className="min-h-full flex flex-col font-sans bg-brand-950 text-white selection:bg-accent-500 selection:text-white">
         <Navbar />
         <main className="flex-1">
           {children}

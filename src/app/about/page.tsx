@@ -3,11 +3,8 @@ import Link from 'next/link';
 import { Button } from "@/components/ui/Button";
 
 export const metadata = {
-    title: "About Us | Aspire Info — Training Vendors & Application Development in Coimbatore",
-    description: "Learn about Aspire Info in Coimbatore, Tamil Nadu. Leading corporate training vendors, custom application development firm, and digital marketing search engine agency serving pan-India.",
-    alternates: {
-        canonical: "https://www.aspireinfoedu.in/about",
-    }
+    title: "About Us | Aspire Info — Technical Faculty Staffing & Digital Services",
+    description: "Learn about Aspire Info, bridging technical instructor talent for colleges and enterprises across India, bespoke web engineering, and performance marketing."
 };
 
 const principles = [
@@ -48,7 +45,7 @@ export default function AboutPage() {
                         </span>
                     </h1>
                     <p className="text-lg text-slate-300/80 leading-relaxed font-light">
-                        Headquartered in Coimbatore, Tamil Nadu and serving institutions and enterprises across India, Aspire Info is a leading corporate training vendor, bespoke web application development company, and digital marketing search engine agency.
+                        Operating out of Tamil Nadu and serving institutions and enterprises across India, Aspire Info provides industry-vetted technical faculty staffing, bespoke web engineering, and performance growth marketing.
                     </p>
                 </div>
 

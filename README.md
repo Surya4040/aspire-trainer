@@ -1,16 +1,12 @@
-# aspire-trainer — Aspire Info
+# aspire-trainer
 
-Official Website: [https://www.aspireinfoedu.in/](https://www.aspireinfoedu.in/)  
-Google Business Location: [https://share.google/K2tk7WqErcGum90bn](https://share.google/K2tk7WqErcGum90bn)  
-Headquarters: Coimbatore, Tamil Nadu, India
+Aspire Info — Technical Faculty Staffing, Modern Website Engineering & Digital Growth Services across India.
 
-Aspire Info — Training Vendors, Bespoke Web Application Development, Digital Marketing Search Engine & Best Online Courses in Coimbatore and across India.
-
-## Core Offerings
-- **Technical Training Vendors (1st Priority)**: Vetted trainers across 24+ technical domains (Fullstack, AI/ML, QA Automation, Cloud/DevOps) for college bootcamps and corporate teams.
-- **Application Development & Web Engineering**: Modern high-performance Next.js and React business web applications, corporate portals, and SaaS dashboards.
-- **Digital Marketing Search Engine & SEO**: Technical search engine optimization (SEO) for page-1 Google rankings and high-ROAS targeted ad campaigns.
-- **Best Online IT Courses in Coimbatore**: 3-month project-driven courses in MERN, Java, Python, and SDET with custom in-browser code practice portal.
+## Features
+- **Technical Trainer Sourcing (1st Priority)**: Vetted trainers across 24+ technical domains (Fullstack, AI/ML, QA Automation, Cloud/DevOps).
+- **Website Creation & Development**: Modern high-performance Next.js and React business web applications and corporate portals.
+- **SEO & Digital Marketing**: Technical search engine optimization and high-ROAS targeted ad campaigns.
+- **Online Practical IT Courses**: 3-month project-driven courses with custom in-browser code practice portal.
 
 ## Getting Started
 

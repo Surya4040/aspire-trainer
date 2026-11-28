@@ -123,16 +123,16 @@ export default function WebServicesPage() {
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded border border-white/10 bg-white/5 backdrop-blur-md text-white font-medium text-xs tracking-widest uppercase mb-6">
                         <span className="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
-                        Application Development &amp; Web Engineering in Coimbatore
+                        Full-Stack Web Engineering
                     </div>
                     <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6 uppercase">
-                        APPLICATION DEVELOPMENT &amp; <br />
+                        WE ENGINEER <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-accent-500">
                             MODERN WEBSITES.
                         </span>
                     </h1>
                     <p className="text-lg text-slate-300/80 leading-relaxed font-light">
-                        Leading application development company in Coimbatore serving businesses across India. We build bespoke Next.js and React corporate portals, business web applications, SaaS dashboards, and e-commerce platforms engineered to load in milliseconds and convert leads.
+                        Bespoke Next.js and React corporate portals, business web applications, and e-commerce stores designed to load in milliseconds and convert visitors into clients.
                     </p>
                 </div>
 

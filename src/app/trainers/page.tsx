@@ -114,14 +114,14 @@ export default function TrainerRequirementPage() {
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded border border-white/10 bg-white/5 backdrop-blur-md text-white font-medium text-xs tracking-widest uppercase mb-6">
                         <span className="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
-                        Top Technical Training Vendors in Coimbatore &amp; Pan-India
+                        Technical Faculty Staffing
                     </div>
                     <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6 uppercase">
                         HIRE TECHNICAL <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-accent-500">TRAINERS ON-DEMAND.</span>
                     </h1>
                     <p className="text-lg text-slate-300/80 leading-relaxed font-light">
-                        Coimbatore&apos;s premier corporate training vendors. Deploy industry-proven faculty across 24+ modern tech domains for engineering college placement bootcamps, workshops, and enterprise upskilling batches in Coimbatore, South India, and nationwide.
+                        Deploy industry-proven corporate faculty across 24+ technical domains for college campus bootcamps, workshops, and enterprise upskilling batches.
                     </p>
                 </div>
 

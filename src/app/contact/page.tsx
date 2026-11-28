@@ -152,7 +152,7 @@ export default function ContactPage() {
                                         required
                                         className="w-full bg-brand-950 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-500 transition-colors"
                                     >
-                                        <option value="Technical Trainer Sourcing">Technical Trainer Sourcing</option>
+                                        <option value="Technical Trainer Sourcing">Technical Trainer Sourcing (1st Priority)</option>
                                         <option value="Website Creation & Development">Website Creation &amp; Next.js Engineering</option>
                                         <option value="SEO & Performance Marketing">SEO &amp; Performance Advertising</option>
                                         <option value="Online IT Practical Courses">Online IT Courses with Web IDE</option>
@@ -180,7 +180,7 @@ export default function ContactPage() {
                                     variant="secondary"
                                     className="w-full py-4 text-xs uppercase tracking-wider"
                                 >
-                                    {submitting ? "Sending Inquiry..." : "Submit Inquiry"}
+                                    {submitting ? "Sending Inquiry..." : "Submit Inquiry &rarr;"}
                                 </Button>
                             </form>
                         )}
@@ -228,21 +228,14 @@ export default function ContactPage() {
                                         <MapPin className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <div className="text-xs font-mono uppercase text-slate-400">Headquarters / Location</div>
-                                        <p className="text-sm text-slate-200 font-medium mt-0.5">
-                                            Coimbatore, Tamil Nadu, India
-                                        </p>
-                                        <p className="text-xs text-slate-400 font-light mt-0.5">
-                                            Delivering on-site training vendors, custom web application development, and SEO services across Coimbatore, South India &amp; pan-India.
-                                        </p>
+                                        <div className="text-xs font-mono uppercase text-slate-400">Location</div>
                                         <a 
                                             href="https://share.google/K2tk7WqErcGum90bn" 
                                             target="_blank" 
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 mt-3 px-3.5 py-1.5 rounded-lg bg-accent-500/15 border border-accent-500/30 text-accent-400 hover:text-white hover:bg-accent-500 text-xs font-semibold tracking-wide transition-all"
+                                            rel="noopener noreferrer" 
+                                            className="text-sm text-slate-300 hover:text-accent-400 font-light block transition-colors"
                                         >
-                                            <MapPin className="w-3.5 h-3.5" />
-                                            <span>Open in Google Maps / Directions &rarr;</span>
+                                            Tamil Nadu, India (Delivering on-site across all South Indian districts &amp; pan-India)
                                         </a>
                                     </div>
                                 </div>
@@ -259,10 +252,9 @@ export default function ContactPage() {
                             </div>
                             <h4 className="text-base font-bold text-white mb-2">Fast Turnaround Commitments</h4>
                             <ul className="space-y-2 text-xs text-slate-300 font-light">
-                                <li>• <strong>Trainer Shortlists:</strong> Vetted instructor profiles within 48 to 72 hours in Coimbatore &amp; nationwide.</li>
-                                <li>• <strong>Application Development:</strong> Custom web proposal and milestone roadmap within 24 hours.</li>
-                                <li>• <strong>Digital Marketing &amp; SEO:</strong> Free search engine visibility audit within 24 hours.</li>
-                                <li>• <strong>Direct Support:</strong> Direct WhatsApp &amp; phone assistance available.</li>
+                                <li>• <strong>Trainer Shortlists:</strong> Vetted instructor profiles within 48 to 72 hours.</li>
+                                <li>• <strong>Web Proposals:</strong> Detailed scope &amp; milestone estimates within 24 hours.</li>
+                                <li>• <strong>Urgent Campus Inquiries:</strong> Direct WhatsApp assistance available.</li>
                             </ul>
                         </div>
 

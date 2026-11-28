@@ -7,10 +7,10 @@ import { CheckCircle2, ChevronLeft, ChevronRight, Users, Globe, TrendingUp } fro
 
 const heroSlides = [
     {
-        badge: "Top Training Vendors in Coimbatore & India",
+        badge: "India's Premier Technical Staffing",
         titlePrefix: "SOURCE QUALIFIED",
         titleHighlight: "TECH TRAINERS.",
-        description: "Deploy industry-vetted faculty across 24+ technical domains for engineering college bootcamps, workshops, and corporate workforce upskilling in Coimbatore and nationwide.",
+        description: "Deploy industry-vetted faculty across 24+ technical domains for engineering college bootcamps, workshops, and corporate workforce upskilling.",
         primaryCTA: { label: "Hire a Trainer", href: "/trainers" },
         secondaryCTA: { label: "Explore Stacks", href: "#domains" },
         terminalHeader: "trainer-pool.ts",
@@ -23,10 +23,10 @@ const heroSlides = [
         ]
     },
     {
-        badge: "Application Development in Coimbatore",
+        badge: "Full-Stack Web Engineering",
         titlePrefix: "WE ENGINEER",
         titleHighlight: "MODERN WEBSITES.",
-        description: "Bespoke Next.js and React business web applications, custom corporate portals, and e-commerce stores engineered to load in milliseconds and convert leads.",
+        description: "Bespoke Next.js and React business web applications, custom corporate portals, and e-commerce stores designed to load in milliseconds and convert leads.",
         primaryCTA: { label: "Build Your Website", href: "/web-services" },
         secondaryCTA: { label: "View Packages", href: "/web-services#quote-form" },
         terminalHeader: "next.config.ts",
@@ -39,10 +39,10 @@ const heroSlides = [
         ]
     },
     {
-        badge: "Digital Marketing Search Engine & Growth",
+        badge: "Data-Driven Performance Growth",
         titlePrefix: "DOMINATE SEARCH &",
         titleHighlight: "DRIVE REVENUE.",
-        description: "Comprehensive technical SEO for page-1 Google rankings combined with high-ROAS Google Search and Meta ad campaigns across Coimbatore and pan-India.",
+        description: "Comprehensive technical SEO for page-1 Google rankings combined with high-ROAS Google Search and Meta ad campaigns across pan-India.",
         primaryCTA: { label: "Get Free SEO Audit", href: "/digital-marketing" },
         secondaryCTA: { label: "Contact Us", href: "/contact" },
         terminalHeader: "analytics-audit.sh",

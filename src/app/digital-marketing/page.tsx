@@ -109,7 +109,7 @@ export default function DigitalMarketingPage() {
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded border border-white/10 bg-white/5 backdrop-blur-md text-white font-medium text-xs tracking-widest uppercase mb-6">
                         <span className="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
-                        Digital Marketing Search Engine &amp; Performance Growth
+                        Search Dominance &amp; Performance Advertising
                     </div>
                     <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6 uppercase">
                         DOMINATE SEARCH &amp; <br />
@@ -118,7 +118,7 @@ export default function DigitalMarketingPage() {
                         </span>
                     </h1>
                     <p className="text-lg text-slate-300/80 leading-relaxed font-light">
-                        Premier digital marketing search engine agency in Coimbatore serving clients nationwide. We engineer technical SEO for page-1 Google rankings, high-intent Google Search Ads, and high-converting Meta ad campaigns.
+                        We build and manage technical SEO strategies and performance ad campaigns on Google and Meta platforms engineered to capture high-intent inquiries.
                     </p>
                 </div>
 

@@ -16,14 +16,14 @@ import { Button } from '../ui/Button';
 const servicePillars = [
     {
         id: "trainers",
-        tabLabel: "Technical Training Vendors",
+        tabLabel: "Technical Trainer Sourcing",
         icon: Users,
-        badge: "Top Training Vendors in Coimbatore & India",
+        badge: "College & Enterprise Faculty",
         title: "Deploy Vetted Technical Faculty On-Demand",
-        description: "Coimbatore's trusted corporate training vendors providing experienced subject-matter practitioners for engineering colleges and corporate tech teams across India. Structured courseware, hands-on lab execution, and complete project evaluations.",
+        description: "We provide experienced subject-matter practitioners for engineering colleges and corporate tech teams across India. Structured courseware, hands-on lab execution, and complete project evaluations.",
         keyPoints: [
             "120+ Vetted trainers across MERN, Java, Python, QA, AI & Cloud",
-            "On-campus placement bootcamps in Coimbatore, online live batches, or hybrid delivery",
+            "On-campus placement bootcamps, online live batches, or hybrid delivery",
             "Custom syllabus design aligned with university curriculum & company stacks",
             "Fastest turnaround matching within 48 to 72 hours"
         ],
@@ -33,11 +33,11 @@ const servicePillars = [
     },
     {
         id: "web",
-        tabLabel: "Application Development",
+        tabLabel: "Website Creation",
         icon: Globe,
-        badge: "Application Development in Coimbatore",
-        title: "Bespoke Modern Websites & Web Applications in Coimbatore",
-        description: "From corporate brand websites and customer portals to custom SaaS dashboards and e-commerce stores, we engineer clean, blazing-fast web applications designed in Coimbatore to load instantly and convert visitors into clients.",
+        badge: "Next.js & Cloud Engineering",
+        title: "Bespoke Modern Websites Engineered for Speed & Conversion",
+        description: "From corporate brand websites and customer portals to e-commerce stores, we engineer clean, blazing-fast web applications designed to load instantly and convert visitors into clients.",
         keyPoints: [
             "Next.js, React, and Tailwind CSS for peak 95+ PageSpeed scores",
             "Mobile-first responsive UX with custom inquiry & contact funnels",
@@ -50,13 +50,13 @@ const servicePillars = [
     },
     {
         id: "marketing",
-        tabLabel: "Digital Marketing Search Engine",
+        tabLabel: "SEO & Digital Marketing",
         icon: TrendingUp,
-        badge: "Digital Marketing Search Engine & SEO",
-        title: "Drive Organic Search Rankings & High-Converting Leads in Coimbatore",
-        description: "We build and execute data-driven digital marketing search engine optimization (SEO) and performance ad campaigns on Google and Meta platforms to bring qualified client inquiries to your business in Coimbatore and nationwide.",
+        badge: "Search Dominance & ROAS",
+        title: "Drive Organic Search Rankings & High-Converting Leads",
+        description: "We build and execute data-driven search engine optimization (SEO) and performance ad campaigns on Google and Meta platforms to bring qualified client inquiries to your business.",
         keyPoints: [
-            "Technical on-page, local Coimbatore, and district-level SEO optimization",
+            "Technical on-page, local, and district-level SEO optimization",
             "High-intent Google Search & Performance Max ad management",
             "Meta (Instagram & Facebook) audience targeting and lead funnels",
             "Transparent monthly reporting on keyword positions and inquiry attribution"
@@ -183,7 +183,7 @@ export function CoreServices() {
                         </div>
                         <div>
                             <span className="text-[11px] font-bold text-accent-400 uppercase tracking-widest">Secondary Upskilling Catalog</span>
-                            <h4 className="text-lg font-bold text-white mt-0.5">Best Online Practical IT Courses in Coimbatore with Web IDE</h4>
+                            <h4 className="text-lg font-bold text-white mt-0.5">Online Practical IT Courses with Web IDE</h4>
                             <p className="text-slate-400 text-xs sm:text-sm mt-0.5 max-w-xl font-light">
                                 Intensive 3-month courses in MERN, Java, Python, and QA Automation with browser-based code practice and mentorship.
                             </p>

@@ -11,8 +11,10 @@ export const metadata: Metadata = {
     keywords: [
         "aspire info blog",
         "training vendors in coimbatore insights",
-        "application development guides",
+        "training vendors in chennai bangalore",
+        "application development in bangalore guides",
         "digital marketing search engine tips",
+        "best online course in bangalore reviews",
         "best online course in coimbatore reviews",
         "cracking software interviews 2026",
         "mern stack vs nextjs",

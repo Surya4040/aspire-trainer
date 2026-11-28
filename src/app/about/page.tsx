@@ -4,19 +4,22 @@ import { Button } from "@/components/ui/Button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Us | Aspire Info — Training Vendors & Application Development in Coimbatore",
-    description: "Learn about Aspire Info in Coimbatore. We bridge industry-vetted technical instructors for engineering colleges, craft modern Next.js web applications, and execute high-performance digital marketing search engine strategies.",
+    title: "About Us | Aspire Info — Training Vendors & Application Development in Coimbatore, Chennai & Bangalore",
+    description: "Learn about Aspire Info. We bridge industry-vetted technical instructors for engineering colleges, craft modern Next.js web applications, and execute high-performance digital marketing search engine strategies across Coimbatore, Chennai, Bangalore, and pan-India.",
     alternates: {
         canonical: "https://www.aspireinfoedu.in/about",
     },
     keywords: [
-        "about aspire info coimbatore",
+        "about aspire info",
         "training vendors in coimbatore",
-        "training ventors in coimbatore",
+        "training vendors in chennai",
+        "training vendors in bangalore",
         "application development in coimbatore",
-        "digital marketing search engine coimbatore",
+        "application development in bangalore",
+        "digital marketing search engine bangalore chennai",
         "best online course in coimbatore institute",
-        "technical faculty staffing coimbatore",
+        "best online course in bangalore",
+        "technical faculty staffing bangalore chennai",
         "it consultancy coimbatore"
     ],
     openGraph: {

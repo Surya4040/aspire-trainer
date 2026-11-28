@@ -15,12 +15,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
         keywords: [
             `best online course in coimbatore`,
-            `best online courses in coimbatore`,
+            `best online course in chennai`,
+            `best online course in bangalore`,
+            `best online courses in bangalore with placement`,
             `${courseTitle.toLowerCase()} course in coimbatore`,
+            `${courseTitle.toLowerCase()} course in chennai`,
+            `${courseTitle.toLowerCase()} course in bangalore`,
             `best ${courseTitle.toLowerCase()} training in coimbatore`,
+            `best ${courseTitle.toLowerCase()} training in bangalore`,
             `${courseTitle.toLowerCase()} online training india`,
             `software training institute in coimbatore`,
-            `it courses in gandhipuram peelamedu coimbatore`,
+            `it courses in bangalore with placement`,
             `job oriented ${courseTitle.toLowerCase()} course with placement`
         ],
         openGraph: {

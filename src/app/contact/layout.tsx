@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Aspire Info Coimbatore | Hire Technical Trainers & Software Solutions",
-  description: "Get in touch with Aspire Info in Coimbatore. Call +91 8220924040 or email aspireinfo.edu@gmail.com. Locate our Coimbatore office on Google Maps: https://share.google/K2tk7WqErcGum90bn for trainer deployment, application development, and SEO consultation.",
+  title: "Contact Aspire Info | Hire Technical Trainers & Software Solutions in Coimbatore, Chennai & Bangalore",
+  description: "Get in touch with Aspire Info serving Coimbatore, Chennai, and Bangalore. Call +91 8220924040 or email aspireinfo.edu@gmail.com. Locate our office on Google Maps: https://share.google/K2tk7WqErcGum90bn for trainer deployment, custom application development, and SEO consultation.",
   alternates: {
     canonical: "https://www.aspireinfoedu.in/contact",
   },
   keywords: [
     "contact aspire info coimbatore",
+    "contact aspire info chennai",
+    "contact aspire info bangalore",
     "aspire info phone number",
     "aspire info address coimbatore",
     "aspire info google location",
-    "hire technical trainers contact",
+    "hire technical trainers contact chennai bangalore",
     "training vendors in coimbatore contact",
-    "application development consultation coimbatore",
-    "digital marketing agency contact coimbatore",
-    "it training institute contact coimbatore gandhipuram"
+    "training vendors in chennai contact",
+    "training vendors in bangalore contact",
+    "application development consultation coimbatore chennai bangalore",
+    "digital marketing agency contact coimbatore"
   ],
   openGraph: {
     title: "Contact Aspire Info Coimbatore | Technical Training & Development",
